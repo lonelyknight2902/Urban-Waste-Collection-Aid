@@ -1,0 +1,21 @@
+.task {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    align-items: center;
+}
+
+.completed {
+    padding: 5px 10px;
+    color: white;
+    background-color: #2AAF14;
+    border-radius: 50px;
+    width: fit-content;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
