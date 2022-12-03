@@ -1,0 +1,12 @@
+.label {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.63)
+}
+
+.task {
+    cursor: pointer;
+}

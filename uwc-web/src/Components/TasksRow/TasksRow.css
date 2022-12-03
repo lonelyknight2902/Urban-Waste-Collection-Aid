@@ -4,18 +4,49 @@
     border-bottom: 1px solid black;
     padding: 10px;
     align-items: center;
+    font-size: 1.25rem;
 }
 
-.completed {
+.status {
+    font-size: 1rem;
     padding: 5px 10px;
     color: white;
-    background-color: #2AAF14;
     border-radius: 50px;
     width: fit-content;
+}
+
+.Completed {
+    background-color: #2AAF14;
+}
+
+.In-progress {
+    background-color: #CCA620;
 }
 
 .task-item {
     display: flex;
     align-items: center;
+}
+
+.assigned {
     gap: 10px;
+}
+
+.icon {
+    display: flex;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: white;
+    height: 1.875rem;
+    width: 1.875rem;
+    border-radius: 50%;
+}
+
+.mcp div:not(:first-child) {
+    margin-left: -10px;
 }
