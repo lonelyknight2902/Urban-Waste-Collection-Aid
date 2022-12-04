@@ -1,29 +1,11 @@
 .create-task {
-    margin: 30px;
+    max-width: 1200px;
     width: 100%;
-}
-
-h1 {
-    font-size: 25pt;
-    padding-left: 20%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.left-panel{
-    /* Auto layout */
-
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 19%;
-    width: 35%;
-    position: absolute;
-}
-
-.image{
-    position: absolute;
-    left: 50%;
-    width: 35%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 85px;
+    flex: 1;
 }
 
 .create-task form {
@@ -42,16 +24,14 @@ h1 {
 
 .auth_input label {
     font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.auth_input input {
-    font-size: 1rem;
+.auth_input input, select {
+    font-size: 1.3125rem;
     padding: 10px 0;
     border: none;
     border-bottom: 1px solid #DCDCDC;
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .auth_input input:focus {
@@ -59,24 +39,14 @@ h1 {
     color: black;
     border-bottom: 1px solid black;
     transition: all 0.1s ease-in;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.submit button {
-    font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 8pt;
-    background-color: rgb(202, 202, 202);
+select {
     border: none;
-    color: black;
-    border-radius: 5pt;
+    border-bottom: 1px solid #DCDCDC;
+    background-color: transparent;
 }
 
-.submit button:hover {
-    font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 8pt;
-    background-color: #06893B;
-    border: none;
-    color: white;
+select option:disabled, select option:invalid {
+    color: #DCDCDC;
 }

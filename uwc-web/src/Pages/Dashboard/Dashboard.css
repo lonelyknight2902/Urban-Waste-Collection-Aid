@@ -2,3 +2,24 @@
     max-width: 1200px;
     width: 100%;
 }
+
+.dashboard-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-head button {
+    cursor: pointer;
+    height: fit-content;
+    padding: 10px 20px;
+    font-weight: 500;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.dashboard-head button:hover {
+    background-color: aliceblue;
+}

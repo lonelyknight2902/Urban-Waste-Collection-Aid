@@ -9,7 +9,7 @@ function Login() {
       <form>
           <div className="auth_input">
             <label htmlFor="user">Username</label>
-            <input
+            <input id='user'
               type="text"
               placeholder="Enter your username"
             ></input>
@@ -17,6 +17,7 @@ function Login() {
           <div className="auth_input">
             <label htmlFor="password">Password</label>
             <input
+              id = 'password'
               type="password"
               placeholder="Enter your password"
             ></input>
