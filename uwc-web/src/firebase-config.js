@@ -15,6 +15,6 @@ const firebaseConfig = {
           "Add your web app's configuration object to firebase-config.js"
       );
     } else {
-      return config;
+      return firebaseConfig;
     }
   }
