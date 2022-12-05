@@ -23,6 +23,10 @@
     background-color: #CCA620;
 }
 
+.Pending {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
 .task-item {
     display: flex;
     align-items: center;

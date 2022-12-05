@@ -47,3 +47,7 @@
     font-weight: 500;
     border-radius: 5px;
 }
+
+.mcps .mcp {
+    display: flex;
+}

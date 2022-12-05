@@ -43,13 +43,6 @@ function CreateTaskCollectorController() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({
-      name: name,
-      type: 'collector',
-      assigned: collector,
-      mcps: mcp,
-      status: 'In-progress'
-    })
     await DBServices.addCollectorTask(name, collector, mcp);
     navigate('/dashboard');
   }

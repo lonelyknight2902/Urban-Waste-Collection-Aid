@@ -6,6 +6,7 @@ import ViewTaskCollector from './ViewTaskCollector';
 
 function ViewTaskController() {
 const [task, setTask] = useState({});
+const [MCPsInfo, setMCPsInfo] = useState([]);
 const navigate = useNavigate();
 
 let { id } = useParams();
@@ -20,10 +21,16 @@ const onDelete = (e) => {
 useEffect(() => {
     DBServices.getTask(setTask, id);
 }, []);
+
+useEffect(() => {
+  if(task.type == "Collector") {
+    DBServices.getMCPsInfo(setMCPsInfo, task.mcps);
+  }
+}, [task])
   if(task.type=="Janitor") {
     return <ViewTaskJanitor task={task} onDelete={onDelete}/>
   } else if(task.type == "Collector") {
-    return <ViewTaskCollector task={task} onDelete={onDelete}/>
+    return <ViewTaskCollector task={task} onDelete={onDelete} mcps={MCPsInfo}/>
   }
 }
 

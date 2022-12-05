@@ -5,11 +5,14 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import CreateTaskCollectorController from './Pages/CreateTask/CreateTaskCollectorController';
 import CreateTaskJanitorController from './Pages/CreateTask/CreateTaskJanitorController';
 import ViewTaskController from './Pages/ViewTask/ViewTaskController';
+import TopBar from './Components/TopBar/TopBar';
 
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
+      <TopBar/>
+      <div className='wrapper'>
       <Routes>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/login' element={<Login/>}/>
@@ -17,6 +20,7 @@ function App() {
         <Route path='/createtask/collector' element={<CreateTaskCollectorController/>}/>
         <Route path='/view/:id' element={<ViewTaskController/>}/>
       </Routes>
+      </div>
     </div>
     </BrowserRouter>
   );

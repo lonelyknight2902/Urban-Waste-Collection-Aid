@@ -1,8 +1,13 @@
 .App {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
   font-size: 3.0625rem;
+}
+
+.wrapper {
+  margin-top: 80px;
 }

@@ -76,13 +76,33 @@ const DBServices = () => {
     }
   }
 
+  const getMCPsInfo = (setMCPsInfo, mcps) => {
+    const infoQuery = query(collection(db, 'mcps'), where('number', 'in', mcps));
+    onSnapshot(infoQuery, (querySnapshot) => {
+      let mcpsInfo = [];
+      querySnapshot.forEach((doc) => {
+        mcpsInfo.push({ ...doc.data(), id: doc.id });
+        setMCPsInfo(mcpsInfo);
+      });
+    });
+  }
+
+  // const getMapDirection = (setDirection, locations) => {
+  //   const DirectionService = new google.maps.DirectionsService();
+  //   DirectionService.route(
+  //     {
+        
+  //     }
+  //   )
+  // }
+
   const addJanitorTask = async (name, janitor, mcp) => {
     await addDoc(collection(db, "tasks"), {
       name: name,
       type: "Janitor",
       assigned: janitor,
       mcps: mcp,
-      status: "In-progress",
+      status: "Pending",
     });
   };
 
@@ -92,7 +112,7 @@ const DBServices = () => {
       type: "Collector",
       assigned: collector,
       mcps: mcp,
-      status: "In-progress",
+      status: "Pending",
     });
   };
 
@@ -112,6 +132,7 @@ const DBServices = () => {
     getMCPs,
     getTasks,
     getTask,
+    getMCPsInfo,
     deleteTask,
     addJanitorTask,
     addCollectorTask,
