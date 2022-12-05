@@ -1,0 +1,49 @@
+.status {
+    font-size: 1rem;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 50px;
+    width: fit-content;
+}
+
+.Completed {
+    background-color: #2AAF14;
+}
+
+.In-progress {
+    background-color: #CCA620;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 100px;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.view-info {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.view-info button {
+    cursor: pointer;
+    width: fit-content;
+    border: none;
+    background-color: #F23939;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+}

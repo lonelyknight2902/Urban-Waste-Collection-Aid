@@ -3,9 +3,9 @@ import './TasksRow.css'
 import { FaUserCircle } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
-function TasksRow({id, name, type, assigned, mcps, status, onView}) {
+function TasksRowController({id, name, type, assigned, mcps, status}) {
   return (
-    <div className='task' id={id} onClick={onView}>
+    <div className='task' id={id}>
         <div key='name' className='task-item'>{name}</div>
         <div key='type' className='task-item'>{type}</div>
         <div className='task-item assigned'>
@@ -26,4 +26,4 @@ function TasksRow({id, name, type, assigned, mcps, status, onView}) {
   )
 }
 
-export default TasksRow
+export default Controller

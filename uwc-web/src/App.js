@@ -1,9 +1,10 @@
 import './App.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Login from './Pages/Login/Login';
-import CreateTaskJanitor from './Pages/CreateTask/CreateTaskJanitor';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import CreateTaskCollector from './Pages/CreateTask/CreateTaskCollector';
+import CreateTaskCollectorController from './Pages/CreateTask/CreateTaskCollectorController';
+import CreateTaskJanitorController from './Pages/CreateTask/CreateTaskJanitorController';
+import ViewTaskController from './Pages/ViewTask/ViewTaskController';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Routes>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/createtask/janitor' element={<CreateTaskJanitor/>}/>
-        <Route path='/createtask/collector' element={<CreateTaskCollector/>}/>
+        <Route path='/createtask/janitor' element={<CreateTaskJanitorController/>}/>
+        <Route path='/createtask/collector' element={<CreateTaskCollectorController/>}/>
+        <Route path='/view/:id' element={<ViewTaskController/>}/>
       </Routes>
     </div>
     </BrowserRouter>

@@ -1,101 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './CreateTask.css';
 import Select from 'react-select';
-import { Link, useNavigate } from "react-router-dom";
-import {db} from '../../firebase.js';
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  query,
-  orderBy,
-  limit,
-  onSnapshot,
-  setDoc,
-  updateDoc,
-  doc,
-  serverTimestamp,
-  getDocs,
-} from 'firebase/firestore';
 
-function CreateTaskCollector() {
-  const [collectorsList, setCollectorsList] = useState([]);
-  const [MCPsList, setMCPsList] = useState([]);
-  const [name, setName] = useState("");
-  const [collector, setCollector] = useState("");
-  const [mcp, setMCP] = useState([]);
-  const navigate = useNavigate();
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log({
-      name: name,
-      type: 'collector',
-      assigned: collector,
-      mcps: mcp,
-      status: 'In-progress'
-    })
-    await addDoc(collection(db, 'tasks'), {
-      name: name,
-      type: 'Collector',
-      assigned: collector,
-      mcps: mcp,
-      status: 'In-progress'
-    })
-    navigate('/dashboard');
-  }
-
-  useEffect(() => {
-    const q1 = query(collection(db, 'collectors'));
-    const q2 = query(collection(db, 'mcps'));
-    const getCollectors = onSnapshot(q1, (querySnapshot) => {
-      let collectors = [];
-      querySnapshot.forEach((doc) => {
-        collectors.push({...doc.data(), id: doc.id});
-        setCollectorsList(collectors);
-        console.log(collectorsList);
-      })
-    });
-
-    const getMCPs = onSnapshot(q2, (querySnapshot) => {
-      let mcps = [];
-      querySnapshot.forEach((doc) => {
-        mcps.push({...doc.data(), id: doc.id});
-        setMCPsList(mcps);
-        console.log(mcps);
-      })
-    });
-
-    return () => {
-      getCollectors();
-      getMCPs();
-    };
-  }, [])
+function CreateTaskCollector({collectorsList, MCPsList, handleSubmit, onChangeName, onChangeAssigned, onChangeMCPs}) {
 
   return (
     <div className='create-task'>
       <div className='left-panel'>
-      <h1>Create janitor's task</h1>
-        <form onSubmit={(e) => handleSubmit(e)}>
+      <h1>Create collector's task</h1>
+        <form onSubmit={handleSubmit}>
           <div className="auth_input" >
             <label htmlFor="task-name">Name</label>
             <input
+              id='task-name'
               type="text"
               placeholder="Enter task name"
-              onChange={(e) => setName(e.target.value)}
+              onChange={onChangeName}
             ></input>
           </div>
           <div className="auth_input">
             <label htmlFor="assigned-to">Assigned to</label>
-            <select required onChange={(e) => setCollector(e.target.value)}>
-            <option value="" disabled selected>+ Add assigned collector</option>
-              {collectorsList.map((collector) => {
-                return (<option value={collector.name}>{collector.name}</option>)
-              })}
-            </select>
+            <Select id='assigned-to' onChange={onChangeAssigned} options={collectorsList.map((collector) => {
+                return {
+                  value: collector.name,
+                  label: collector.name
+                }
+              })}/>
           </div>
           <div className="auth_input">
             <label htmlFor="assigned-mcp">Assigned MCP</label>
-            <Select onChange={(choices) => setMCP(choices.map(choice => choice.value))} isMulti={true} options={MCPsList.map((mcp) => {
+            <Select id='assigned-mcp' onChange={onChangeMCPs} isMulti={true} options={MCPsList.map((mcp) => {
                 return {
                     value: mcp.number,
                     label: mcp.number
