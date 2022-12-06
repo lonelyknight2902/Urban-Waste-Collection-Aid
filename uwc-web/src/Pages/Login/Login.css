@@ -40,3 +40,9 @@
     border-bottom: 1px solid black;
     transition: all 0.1s ease-in;
 }
+
+.login button {
+    background: none;
+    border: 2px solid black;
+    color: black;
+}

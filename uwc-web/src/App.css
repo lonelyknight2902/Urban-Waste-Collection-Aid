@@ -11,3 +11,8 @@ h1 {
 .wrapper {
   margin-top: 80px;
 }
+
+button {
+  border-radius: 15px;
+  padding: 10px 20px;
+}

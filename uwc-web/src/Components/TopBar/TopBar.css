@@ -10,3 +10,9 @@
     background-color: #06893B;
     color: white;
 }
+
+.top-bar button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+}
