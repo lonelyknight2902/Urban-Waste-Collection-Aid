@@ -2,10 +2,11 @@ import React from 'react'
 import { FaUserCircle } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 import TasksList from '../../Components/TasksList/TasksList';
+import Map from '../../Components/Map/Map'
 import './ViewTask.css'
 
 
-function ViewTaskJanitor({task, onDelete}) {
+function ViewTaskJanitor({task, onDelete, MCPsInfo}) {
   return (
     <div className='view'>
       <div className='view-info'>
@@ -35,6 +36,7 @@ function ViewTaskJanitor({task, onDelete}) {
       </div>
       <button onClick={onDelete} className='delete'>Delete</button>
     </div>
+    <Map/>
     </div>
   )
 }

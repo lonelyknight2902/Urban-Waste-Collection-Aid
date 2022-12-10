@@ -15,7 +15,7 @@ function App() {
       <div className='wrapper'>
       <Routes>
         <Route path='/dashboard' element={<Dashboard/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/' element={<Login/>}/>
         <Route path='/createtask/janitor' element={<CreateTaskJanitorController/>}/>
         <Route path='/createtask/collector' element={<CreateTaskCollectorController/>}/>
         <Route path='/view/:id' element={<ViewTaskController/>}/>

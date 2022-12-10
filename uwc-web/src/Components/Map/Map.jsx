@@ -1,9 +1,10 @@
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
 import React, { useState } from 'react'
+import './Map.css'
 
 const center = { lat: 48.8584, lng: 2.2945}
 
-function Map({mcps}) {
+function Map() {
     const { isLoaded } = useJsApiLoader({
         googleMapsApiKey:'AIzaSyA_adJlp0fl9g8dxysUoW-E6F772PGTT-Q'
     })
@@ -28,8 +29,9 @@ function Map({mcps}) {
     //calculateRoute();
 
   return (
-    <div>
-        <GoogleMap center={center}  zoom={15} mapContainerStyle={{margin: '0', padding: '0', width: '80vh', height: '50vh'}}>
+    <div className="map">
+        <GoogleMap center={{lat : 10.794991374132902, lng: 106.60019325011359}}  zoom={15} mapContainerStyle={{margin: '0', padding: '0', width: '80vh', height: '50vh'}}>
+          <Marker position={{lat : 10.794991374132902, lng: 106.60019325011359}}/>
         </GoogleMap>
     </div>
   )

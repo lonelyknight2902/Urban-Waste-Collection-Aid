@@ -28,7 +28,7 @@ useEffect(() => {
   }
 }, [task])
   if(task.type=="Janitor") {
-    return <ViewTaskJanitor task={task} onDelete={onDelete}/>
+    return <ViewTaskJanitor task={task} onDelete={onDelete} mcps={MCPsInfo}/>
   } else if(task.type == "Collector") {
     return <ViewTaskCollector task={task} onDelete={onDelete} mcps={MCPsInfo}/>
   }

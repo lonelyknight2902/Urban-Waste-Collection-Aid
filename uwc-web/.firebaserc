@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "urban-waste-collection"
-  }
+    "default": "urban-waste-collection",
+    "dev": "urban-waste-collection"
+  },
+  "targets": {},
+  "etags": {}
 }
